@@ -23,7 +23,7 @@
 
 **Your target architecture will look like this:**
 
-![alt text](./images/nginx%20image.png)
+![nginx image](https://user-images.githubusercontent.com/97651517/160321647-e7f5ec60-b2f6-4c5e-9b64-6ad48d234b82.png)
 
 ## LETS GET STARTED
 
@@ -31,56 +31,55 @@
 
 1. Create an EC2 VM based on Ubuntu Server 20.04 LTS and name it Nginx LB (do not forget to open TCP port 80 for HTTP connections, also open TCP port 443 – this port is used for secured HTTPS connections)
 
-![alt text](./images/Nginx%20instance%20created.png)
+![Nginx instance created](https://user-images.githubusercontent.com/97651517/160321710-1fde4cd3-387f-46f4-8797-3388a553ace5.png)
 
-![alt text](./images/HTTP%2080%20and%20HTTPS%20443%20open%20.png)
+![HTTP 80 and HTTPS 443 open ](https://user-images.githubusercontent.com/97651517/160321758-bac4e470-f4d5-4e06-826d-de5a7606bfa6.png)
 
 2. Register a Free Domain Name (DNS) for the NGINX Server.
 
-![alt text](./images/register%20domain.png)
+![register domain](https://user-images.githubusercontent.com/97651517/160321820-537447c4-c9ef-4439-ab2f-4a48aa6f9f30.png)
 
-![alt text](./images/Domain%20name%20registered.png)
+![Domain name registered](https://user-images.githubusercontent.com/97651517/160321862-38032d39-47a3-4284-aadb-fcba9c6c536c.png)
 
 *create a hosted zone in Route53*
 
-![alt text](./images/type%20dmain%20name%20and%20create%20hosted%20zone.png)
+![create hosted zone](https://user-images.githubusercontent.com/97651517/160321936-c4d6c1eb-7cf3-43a1-8f17-01e6213df679.png)
 
 *Copy the following route traffic* 
 
-![alt text](./images/value%20route%20traffic.png)
+![value route traffic](https://user-images.githubusercontent.com/97651517/160322026-de97d7a9-0d2a-4b01-bf45-e42e92211b98.png)
 
-![alt text](./images/name%20server.png)
+![name server](https://user-images.githubusercontent.com/97651517/160322097-5e7609f4-85a2-41f8-97eb-478b65594063.png)
 
 *paste each in the domain name manage servers*
 
-![alt text](./images/manage%20servers.png)
-
+![manage servers](https://user-images.githubusercontent.com/97651517/160322112-ff7656c9-8373-41ee-8744-af46177bb465.png)
 ![alt text](./images/successfully%20done.png)
 
 *Create a record for the Domain name*
 
-![alt text](./images/create%20record.png)
+![create record](https://user-images.githubusercontent.com/97651517/160322243-56e119a2-2c65-4f6e-b8d0-ca45bc6d8eaa.png)
 
 *Input the Nginx Private IP addrr*
 
-![alt text](./images/Nginx%20IP%20address.png)
+![Nginx IP address](https://user-images.githubusercontent.com/97651517/160322321-4080f9ab-8811-42c8-9978-65678e1cacb9.png)
+
 
 *Create a second Record with www for the Domain*
 
-![alt text](./images/second%20record%20www.png)
+![second record www](https://user-images.githubusercontent.com/97651517/160322390-8377b9ee-81dd-46c3-9675-949759e02bc4.png)
 
-![alt text](./images/two%20records%20created.png)
-
+![two records created](https://user-images.githubusercontent.com/97651517/160322417-fd1a2136-b280-4a3f-80b0-d202a1dcc095.png)
 
 ### UPDATE SERVER AND INSTALL NGINX
 
 `sudo apt update`
 
-![alt text](./images/sudo%20apt%20update%20nginx.png)
+![sudo apt update nginx](https://user-images.githubusercontent.com/97651517/160322462-6f00f49c-e171-44ea-8725-3bef6a3f1dd0.png)
 
 `sudo apt install nginx -y`
 
-![alt text](./images/install%20Nginx.png)
+![install Nginx](https://user-images.githubusercontent.com/97651517/160322547-d419c48f-3cc1-47aa-83f2-c064b144e929.png)
 
 1. Enabled nginx and started it using the following cmdlet;
 
@@ -92,7 +91,7 @@
 
 `sudo systemctl status nginx`
 
-![alt text](./images/sudo%20enable%20start%20and%20status%20nginx.png)
+![sudo enable start and status nginx](https://user-images.githubusercontent.com/97651517/160322647-b70ba369-12cb-4bd3-8c48-0dd2394f1475.png)
 
 
 3. Created a configuration for the reverse proxy settings by copying the web server configuration into the load balancer using the followng cmdlet;
@@ -101,7 +100,7 @@
 
 `sudo nano /etc/ngingx/sites-available/load_balancer.conf`
 
-![alt text](./images/nano%20config%20file.png)
+![nano config file](https://user-images.githubusercontent.com/97651517/160322695-cfb07533-a5cc-4d91-8712-5aa04e47a740.png)
 
 4. Removed the default site to allow the reverse proxy to redirect to the new configuration file using the cmdlet below:
 
@@ -123,13 +122,15 @@
 
 `sudo systemctl reload nginx`
 
-![alt text](./images/nano%20config%20for%20nginx.png)
+*The following cmdlet above 4-8 shown below*
+
+![nano config for nginx](https://user-images.githubusercontent.com/97651517/160322839-35ac6007-56c1-4134-8182-fcd9a22465cc.png)
 
 
 9. Checked the 'http://toolingeon.ml' domain/site and saw that it redirects to the tooling page.
    But our site is unsecured so lets secure it with SSL/TLS CERTIFICATES in STEP 2.
 
-![alt text](./images/unsecured%20site%20from%20nginx%20server.png)
+![unsecured site from nginx server](https://user-images.githubusercontent.com/97651517/160322935-89acb98f-0954-4e17-8d71-5b25cbacb804.png)
 
 
 ### STEP 2. CONFIGURED SECURED CONNECTION USING SSL/TLS CERTIFICATES AS FOLLOWS:
@@ -138,38 +139,39 @@
 
 `sudo apt install certbot -y`
 
-![alt text](./images/install%20certbot.png)
+![install certbot](https://user-images.githubusercontent.com/97651517/160323038-7da13a5e-b9e6-4483-b024-4587bb974c7b.png)
 
 2. Installed a python dependency module to be used by the certbot using the following cmdlet: 
 
 `sudo apt install python3-certbot-nginx -y`
 
-![alt text](./images/python%203%20certbot.png)
+![python 3 certbot](https://user-images.githubusercontent.com/97651517/160323082-41d7e7ff-c8fe-429a-b45b-a180e740c167.png)
 
 3. Checked nginx syntax again and reloaded after the installation of certbot and python3 dependency.
 
 `sudo nginx -t && sudo nginx -s`
 
-![alt text](./images/syntax%20and%20config%20succesful.png)
+![ngix -t and nginx -s](https://user-images.githubusercontent.com/97651517/160323138-78adf5c0-f398-4172-8ed4-9330db4f6cf6.png)
 
 4. Created a certificate for our domain to secure it by running the following cmdlet:
 
 `sudo certbot --nginx -d toolingeon.ml -d`
 
-![alt text](./images/certbot%20new%20certficate.png)
+![certbot new certficate](https://user-images.githubusercontent.com/97651517/160323262-a74e75f8-f1ea-47a7-9c75-72bf6c0a3160.png)
 
 5. Refreshed the 'toolingeon.ml' web page to observe the applied security settings after creating certificate
 
-![alt text](./images/site%20secured.png)
+![site secured](https://user-images.githubusercontent.com/97651517/160323424-6de1f2a9-6bd8-4ac7-a82b-44b9ef535af2.png)
 
-6. As best practice, created a cronjob that will run a renew command periodically to automatically renew our certificate by editing the crontab
+
+6. As best practice, created a crontab that will run a renew command periodically to automatically renew our certificate by editing the crontab
 
 `crontab -e `
 
-![alt text](./images/crontab%20-e.png)
+![crontab -e](https://user-images.githubusercontent.com/97651517/160323574-98d3146b-9c18-4ee4-9c0e-ec0b91937b1c.png)
 
 script to the file, choose #1 for Nano editor: * */12 * * * root /usr/bin/certbot renew > /dev/null 2>&1
 
-![alt text](./images/crontab%20-e.png)
+![crontab -e](https://user-images.githubusercontent.com/97651517/160323574-98d3146b-9c18-4ee4-9c0e-ec0b91937b1c.png)
 
 ## We have created an NGINX load balancer and can route traffic to it via reverse proxy and also secured it.
