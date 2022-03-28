@@ -54,7 +54,8 @@
 *paste each in the domain name manage servers*
 
 ![manage servers](https://user-images.githubusercontent.com/97651517/160322112-ff7656c9-8373-41ee-8744-af46177bb465.png)
-![alt text](./images/successfully%20done.png)
+
+![successfully done](https://user-images.githubusercontent.com/97651517/160324134-56801dd1-7fdd-4a5c-a30b-5956fa7bc69c.png)
 
 *Create a record for the Domain name*
 
@@ -64,10 +65,11 @@
 
 ![Nginx IP address](https://user-images.githubusercontent.com/97651517/160322321-4080f9ab-8811-42c8-9978-65678e1cacb9.png)
 
-
 *Create a second Record with www for the Domain*
 
 ![second record www](https://user-images.githubusercontent.com/97651517/160322390-8377b9ee-81dd-46c3-9675-949759e02bc4.png)
+
+*Two Records Created Successfull*
 
 ![two records created](https://user-images.githubusercontent.com/97651517/160322417-fd1a2136-b280-4a3f-80b0-d202a1dcc095.png)
 
