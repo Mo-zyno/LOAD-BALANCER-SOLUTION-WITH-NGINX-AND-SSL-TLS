@@ -45,31 +45,31 @@
 
 ![create hosted zone](https://user-images.githubusercontent.com/97651517/160321936-c4d6c1eb-7cf3-43a1-8f17-01e6213df679.png)
 
-4. Copy the following route traffic* 
+4. Copy the following route traffic
 
 ![value route traffic](https://user-images.githubusercontent.com/97651517/160322026-de97d7a9-0d2a-4b01-bf45-e42e92211b98.png)
 
 ![name server](https://user-images.githubusercontent.com/97651517/160322097-5e7609f4-85a2-41f8-97eb-478b65594063.png)
 
-5. Paste each in the domain name manage servers*
+5. Paste each in the domain name manage servers
 
 ![manage servers](https://user-images.githubusercontent.com/97651517/160322112-ff7656c9-8373-41ee-8744-af46177bb465.png)
 
 ![successfully done](https://user-images.githubusercontent.com/97651517/160324134-56801dd1-7fdd-4a5c-a30b-5956fa7bc69c.png)
 
-6. Create a record for the Domain name*
+6. Create a record for the Domain name
 
 ![create record](https://user-images.githubusercontent.com/97651517/160322243-56e119a2-2c65-4f6e-b8d0-ca45bc6d8eaa.png)
 
-7. Input the Nginx Private IP addrr*
+7. Input the Nginx Private IP addrress
 
 ![Nginx IP address](https://user-images.githubusercontent.com/97651517/160322321-4080f9ab-8811-42c8-9978-65678e1cacb9.png)
 
-8. Create a second Record with www for the Domain*
+8. Create a second Record with www for the Domain
 
 ![second record www](https://user-images.githubusercontent.com/97651517/160322390-8377b9ee-81dd-46c3-9675-949759e02bc4.png)
 
-9. Two Records Created Successfull*
+9. Two Records Created Successfull
 
 ![two records created](https://user-images.githubusercontent.com/97651517/160322417-fd1a2136-b280-4a3f-80b0-d202a1dcc095.png)
 
